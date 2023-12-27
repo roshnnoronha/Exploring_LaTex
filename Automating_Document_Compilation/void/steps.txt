@@ -1,0 +1,19 @@
+#installing Latex 
+sudo apt-get update
+sudo apt-get install texlive
+sudo apt-get install texlive-latex-extra
+
+
+#Running Osoconn to design the connections
+
+
+#Printing the files
+lpr -o media=Letter *.cou
+mv ~/PDF/shearConnection*.pdf ./
+
+#Compiling Latex
+
+
+#Extract the maximum interaction ratios from all .cou files
+cat *.cou | sed -n '/\s*Maximum utility ratio/{p}' | cut
+ -d "|" -f2

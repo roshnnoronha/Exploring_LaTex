@@ -1,0 +1,102 @@
+An overview of all the checks performed is provided in this
+section. To see the entire output refer attachement 1.
+
+\subsection{Glossary of Terms}
+
+\(T\) : Transfer force in connection\\
+\(V\) : Shear force in connection\\
+\(T_b\) : Transfer force per bolt \(=T/2n\)\\
+\(V_b\) : Shear force per bolt \(=V/2n\)\\
+\(n\) : Number of bolts\\
+\(R_a\) : Allowable strength\\
+\(A_b\) : Nominal unthreaded body area of bolt\\
+\(F_{nt}\) : Nominal bolt tensile stress\\
+\(F_{nv}\) : Nominal bolt shear stress\\
+\(l_c\) : Clear distance between bolt hole edges or edge of connecting member\\
+\(t\) : Thickness of connecting member, either clip angle or supporting member\\
+\(F_u\) : Tensile strength of connected member, either clip angle or supporting
+member.\\
+\(x\) : Centroid of weld group
+\(l\) : Length of clip angle
+\(b\) : Horizonatal length of weld group
+\(I_p\) : Polar moment of inertia of weld group
+\(l_i\) : Lenght of internal leg of clip angle
+\(f_h\) : Maximum horizontal stress in weld group
+\(f_v\) : Maximum vertical stress in weld group
+\(f_r\) : Maximum resultant stress in weld group
+\(F_EXX\) : Tensile strenght of weld
+\(t_w\) : Thickness of weld
+
+
+\subsection{Formulation}
+\subsubsection{Bolt Shear Check}
+\begin{align}
+    R_a = 0.75 F_{nv} A_b
+\end{align}
+\subsubsection{Bolt Tensile Check}
+\begin{align}
+    R_a &= 0.75 F'_{nt} A_b\\ 
+    \intertext{\quad \quad where,} \notag  
+    F'_{nt} &= 1.3 F_{nt} - \frac{F_{nt}}{0.75 F_{nv}} \frac{V_b}{A_b}\leq F_{nt}
+    \notag
+\end{align}
+\subsubsection{Bolt Bearing Check}
+\begin{align}
+    R_a = 1.2 l_c t F_u 
+\end{align}
+\subsubsection{Weld Check}
+\begin{align}
+    x &= \frac{b^2}{2 b + l} \\
+    I_p &= \frac{(2 b + l)^3}{12} - \frac{b^2(b + l)^2}{2 b + l} \\
+    f_h &= \frac{T}{2(b + l)} + \frac{V (l_i - x) l}{4 I_p} \\
+    f_v &= \frac{V}{2(b + l)} + \frac{V (l_i - x)(b - x)}{2 I_p} \\
+    f_r &= \sqrt{f_h^2 + f_v^2} \\    
+    R_a &= 0.318 t_w F_{EXX}
+\end{align}
+\subsubsection {Bolt Prying Check}
+\begin{gather}
+    T_a = B Q \\
+    Q = \begin{cases}
+        1 &\text {if \(\alpha' < 0\)}\\
+        \frac{t}{t_c}^2 (1 + \delta \alpha') &\text {if \(0 \le \alpha' \le 1\)}\\
+        \frac{t}{t_c}^2 (1 + \delta) &\text {if \(\alpha' > 1\)}
+    \end{cases}
+\end{gather}
+where \(\alpha'\),\(\delta\),\(t_c\) are as defined in Part 9 of the AISC Manual
+\subsubsection{Clip angle shear check}
+\begin{gather}
+    R_{a1} = 0.6 F_y t_a l_a \\
+    R_{a2} = 0.45 F_u t_a (l_a - n b_h) \\ 
+    R_a = \min{R_{a1},R_{a2}}
+\end{gather}
+
+\subsubsection{Cope flexure check}
+\begin{gather}
+    M_a = 0.9 F_{cr} S_{net} \\
+    F_{cr} = \begin{cases} 
+        \frac{\pi^2 E}{12(1-\nu^2)} [\frac{t_w}{h_o}]^2 fk \le F_y \\
+        0.62 \pi E \frac{t_w^2}{c h_o} F_d \le F_y \\
+        Q F_y
+    \end{cases}
+\end{gather}
+where \(h_o\), \(f\), \(k\),\(f_d\), \(Q\) are as defined in Part 9 of the AISC Manual
+
+\subsubsection{Cope axial check}
+\begin{gather}
+    P_a = 0.9 F_{cr} A_c \\
+    F_{cr} = (0.658 ^ \frac{F_y}{F_e})F_y \text{,if } \frac{KL}{r} \le 4.71 \sqrt{\frac{E}{F_y}}\\
+    = 0.877 F_e \text{, otherwise} \\
+    F_e = \frac{\pi^2 E}{(\frac{KL}{r})^2}
+\end{gather}
+\subsubsection{Cope shear check}
+\begin{gather}
+    V_a = 0.6 F_y h_o t_w
+\end{gather}
+
+
+
+
+
+
+
+

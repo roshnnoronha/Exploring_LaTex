@@ -1,0 +1,149 @@
+-----------------------------------------------------------------------+---------------------
+Design Summary                                                         | 
+-----------------------------------------------------------------------+---------------------
+   Connection is OK                                                    |  
+   Maximum utility ratio for connection                                | 0.680 
+-----------------------------------------------------------------------+---------------------
+Design Inputs                                                          | 
+-----------------------------------------------------------------------+---------------------
+   Design method                                                       | ASD 
+   Young's modulus of elasticity                                       | 200000.000 MPa
+   Poisson's ratio                                                     | 0.300 
+                                                                       | 
+Connection forces:                                                     | 
+   Transfer force (TF)                                                 | 34000.000 N
+   Shear force (SF)                                                    | 15000.000 N
+                                                                       | 
+Bolt Details:                                                          | 
+   Bolt Diameter                                                       | 22.000 mm
+   Number of bolts per clip angle (n)                                  | 2.000 
+   Bolt Gage                                                           | 140.000 mm
+   Bolt Spacing                                                        | 70.000 mm
+   Nominal tensile capacity of bolt                                    | 620.000 MPa
+   Nominal shear capacity of bolt                                      | 372.000 MPa
+                                                                       | 
+Weld Details:                                                          | 
+   Weld thickness                                                      | 6.000 mm
+   Weld tensile strength                                               | 482.000 MPa
+                                                                       | 
+Clip angle dimensions:                                                 | 
+   Clip angle  size (li x lo x ta)                                     | 102x102x9.53 mm
+   Clip angle length                                                   | 140.000 mm
+   Yield strength of clip angle                                        | 250.000 MPa
+   Tensile strenght of clip angle                                      | 400.000 MPa
+                                                                       | 
+Connecting beam properties:                                            | 
+   Section size                                                        |  
+      Depth                                                            | 302.000 mm
+      Flange width                                                     | 203.000 mm
+      Flange thickness                                                 | 13.100 mm
+      Web thickness (tw)                                               | 7.490 mm
+   Yield strength of beam                                              | 345.000 MPa
+   Tensile strength of beam                                            | 450.000 MPa
+   Beam setback from connection member (s)                             | 12.000 mm
+                                                                       | 
+Supporting member properties:                                          | 
+   Support type                                                        | Column Flange 
+   Section size                                                        | W360X64 
+      Depth                                                            | 348.000 mm
+      Flange width                                                     | 203.000 mm
+      Flange thickness                                                 | 13.500 mm
+      Web thickness                                                    | 7.750 mm
+-----------------------------------------------------------------------+---------------------
+Design Calculations                                                    | 
+-----------------------------------------------------------------------+---------------------
+                                                                       | 
+Bolt Shear Check:                                                      | 
+   Shear per bolt                                                      | 
+      [Vb=SF/(2*n)]                                                    | 3750.000 N
+   Nominal shear strength of bolt (Rn)                                 | 141337.680 N
+   ASD factor in bolt shear (omega)                                    | 2.000 
+   Allowable shear strength of bolt                                    | 
+      [Ra=Rn/omega]                                                    | 70668.840 N
+   Utility ratio in bolt shear                                         | 
+      [Vb/Ra]                                                          | 0.053 
+                                                                       | 
+Bolt Bearing at Clip Angle Check:                                      | 
+   Nominal strength in bearing at clip angle (Rn)                      | 105211.200 N
+   ASD factor in bolt bearing (omega)                                  | 2.000 
+   Allowable strength in bearing at clip angle                         | 
+      [Ra=Rn/omega]                                                    | 52605.600 N
+   Utility ratio in bearing at clip angle                              | 
+      [Vb/Ra]                                                          | 0.071 
+                                                                       | 
+Bolt Bearing at Support Check:                                         | 
+   Nominal strength in bearing at support (Rn)                         | 320760.000 N
+   ASD factor in bolt bearing (omega)                                  | 2.000 
+   Allowable strength in bearing at support                            | 
+      [Ra=Rn/omega]                                                    | 160380.000 N
+   Strength reduction factor to account for backing beam (r)           | 1.000 
+   Utility ratio in bearing at support                                 | 
+      [Vb/(Ra*r)]                                                      | 0.023 
+                                                                       | 
+Bolt Tension Check (without prying:                                    | 
+   Tension per bolt without prying                                     | 
+      [Tb=TF/(2*n)]                                                    | 8500.000 N
+   Nominal bolt strength in tension (Rn)                               | 235562.800 N
+   ASD factor in bolt tension (omega)                                  | 2.000 
+   Allowable bolt strength in tension                                  | 
+      [B=Rn/omega]                                                     | 117781.400 N
+   Utility ratio in bolt tension                                       | 
+      [Tb/B]                                                           | 0.072 
+                                                                       | 
+Clip angle prying action check:                                        | 
+   Bolt strength reduction factor due to clip prying (Q)               | 0.106 
+   Interaction ratio in clip prying                                    | 
+      [Tb/(Q*B)]                                                       | 0.680 
+                                                                       | 
+Weld Check:                                                            | 
+   Maximum stress in weld group (fw)                                   | 96.179 N/mm
+   Nominal strength of weld (Rn)                                       | 1226.786 N/mm
+   ASD factor for weld (omega)                                         | 2.000 
+   Allowable weld strength                                             | 
+      [Ra=Rn/omega]                                                    | 613.393 N/mm
+   Utility ratio for weld                                              | 
+      [fw/Ra]                                                          | 0.157 
+                                                                       | 
+Web Rupture at Weld Check:                                             | 
+   Minimum thickness of web at weld (tw`)                              | 1.425 mm
+   Utility ratio in rupture at weld                                    | 
+      [tw`/tw]                                                         | 0.190 
+                                                                       | 
+Clip Angle Shear Yielding Check:                                       | 
+   Shear in clip angle                                                 | 
+      [Va=sqrt(TF^2+SF^2)/2]                                           | 18580.904 N
+   Nominal shear yeilding strength of clip angle (Rn)                  | 200130.000 N
+   ASD factor for shear yielding (omega)                               | 1.500 
+   Allowable shear yielding strength of clip angle                     | 
+      [Ra=Rn/omega]                                                    | 133420.000 N
+   Utility ratio in shear yielding                                     | 
+      [Va/Ra]                                                          | 0.139 
+                                                                       | 
+Clip Angle Shear Rupture Check:                                        | 
+   Nominal shear rupture strength of clip angle (Rn)                   | 210422.400 N
+   ASD factor for shear rupture (omega)                                | 2.000 
+   Shear rupture strength of clip angle                                | 
+      [Ra=Rn/omega]                                                    | 105211.200 N
+   Utility ratio in shear rupture                                      | 
+      [Va/Ra]                                                          | 0.177 
+                                                                       | 
+Column flange prying action check:                                     | 
+   Bolt strength reduction factor due to column flange prying (Q)      | 0.599 
+   Interaction ratio in column flange prying                           | 
+      [Tb/(Q*B)]                                                       | 0.120 
+                                                                       | 
+Column web yielding check:                                             | 
+   Nominal strength of column web yielding (Rn)                        | 564161.250 N
+   ASD factor in web yielding (omega)                                  | 1.500 
+   Allowable strength of column in web yielding                        | 
+      [Ra=Rn/omega]                                                    | 376107.500 N
+   Interaction ratio in column web yielding                            | 
+      [TF/Ra]                                                          | 0.090 
+                                                                       | 
+Column web crippling check:                                            | 
+   Nominal strength of column in web crippling (Rn)                    | 424838.773 N
+   ASD factor in web crippling (omega)                                 | 2.000 
+   Allowable strength of column in web crippling                       | 
+      [Ra=Rn/omega]                                                    | 212419.386 N
+   Interaction ratio in column web crippling                           | 
+      [TF/Ra]                                                          | 0.160 
